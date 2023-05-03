@@ -1,15 +1,9 @@
+import { appWithTranslation } from "next-i18next";
 import "@/styles/globals.css";
 import Head from "next/head";
 import { Toaster } from "react-hot-toast";
 
-
-
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-
-
-
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <>
       <Head>
@@ -29,9 +23,11 @@ export default function App({ Component, pageProps }) {
       </Head>
 
       <Toaster position="top-center" reverseOrder={false} />
-      <Header />
-     <Component {...pageProps} />
-      <Footer />
+   
+      <Component {...pageProps} />
+   
     </>
   );
 }
+
+export default appWithTranslation(App);

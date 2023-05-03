@@ -1,11 +1,15 @@
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import React from "react";
 
-function Menu(props) {
+function Menu() {
+const {t} = useTranslation();
+
+ 
   const data = [
-    { id: 1, name: "Home", url: "/" },
-    { id: 2, name: "About Us", url: "/about" },
-    { id: 2, name: "Contact Us", url: "/contact" },
+    { id: 1, name: t("header:title-one"), url: "/" },
+    { id: 2, name: t("header:title-two"), url: "/about" },
+    { id: 2, name: t("header:title-three"), url: "/contact" },
   ];
   return (
     <ul className="hidden md:flex items-center gap-8 font-medium">

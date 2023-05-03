@@ -52,7 +52,7 @@ function Plan(props) {
               </p>
             </div>
             <div className="bg-[#E31C25] w-[104px] mx-auto rounded-sm hover:bg-black duration-200 ease-out my-6 flex items-center justify-center ">
-              <Link href="/subscribe">
+              <Link href="/subscribe/silver/1">
                 <Button className="uppercase">Subscribe</Button>
               </Link>
             </div>
@@ -86,7 +86,7 @@ function Plan(props) {
               </p>
             </div>
             <div className="bg-black w-[104px] mx-auto rounded-sm hover:bg-[#E31C25] duration-200 ease-out my-6 flex items-center justify-center ">
-              <Link href="/subscribe">
+              <Link href="/subscribe/standard/2">
                 <Button className="uppercase">Subscribe</Button>
               </Link>
             </div>
@@ -116,7 +116,7 @@ function Plan(props) {
               <p className="text-gray-600 pb-4">Personal Trainer</p>
             </div>
             <div className="bg-[#E31C25] w-[104px] mx-auto rounded-sm hover:bg-black duration-200 ease-out my-6 flex items-center justify-center ">
-              <Link href="/subscribe">
+              <Link href="/subscribe/gold/3">
                 <Button className="uppercase">Subscribe</Button>
               </Link>
             </div>

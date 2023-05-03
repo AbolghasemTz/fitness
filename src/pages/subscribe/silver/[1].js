@@ -47,8 +47,10 @@ let validationSchema = Yup.object({
   gender: Yup.string().required("Gender Is Required"),
 });
 
-function subscribe() {
+function silver() {
   const router = useRouter();
+  const planName = router.asPath.split("/")
+
 
   const onSubmit = (values) => {
     const localStorageClients = localStorage.getItem("clients");
@@ -72,30 +74,11 @@ function subscribe() {
       <Wrapper>
         <div className="grid grid-cols-12 gap-8">
           <div className="md:col-span-4 col-span-10 md:mt-14 mt-10 mb-2">
-            <h3 className="mb-8 font-bold text-3xl tracking-wider">
-              Registration classes
-            </h3>
-            <div>
-              <div className="flex items-center">
-                <GoLocation className="text-[#E31C25] text-2xl mr-2" />
-
-                <div>
-                  <p className="text-2xl font-[600]">Our Address</p>
-                  <p>IRAN, Gorgan , Ozon gym ,24H</p>
-                </div>
-              </div>
-
-              <div className="flex items-center mt-6">
-                <AiOutlineMail className="text-[#E31C25] text-2xl mr-2" />
-
-                <div>
-                  <p className="text-2xl font-[600]">Mail Us</p>
-                  <p>info@ozon.com</p>
-                </div>
-              </div>
-            </div>
+          <h1 className="mb-8 font-bold text-4xl tracking-wider uppercase md:text-left text-center">
+           plan  {planName[2]}
+            </h1>
+           
           </div>
-
           {/* form */}
           <form
             onSubmit={formik.handleSubmit}
@@ -152,4 +135,4 @@ function subscribe() {
   );
 }
 
-export default subscribe;
+export default silver;
