@@ -7,14 +7,10 @@ import Button from "../Common/Button";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { IoMdFitness } from "react-icons/io";
 import { BsArrowRight } from "react-icons/bs";
-import { useTranslation } from "next-i18next";
 
 function BestFitness() {
-  const { t } = useTranslation();
-
   return (
     <Wrapper>
-    
       <div className="grid grid-cols-12 md:gap-x-8 gap-y-6 md:mt-[130px] mt-[50px]">
         {/* left */}
 
@@ -29,7 +25,7 @@ function BestFitness() {
         {/* right */}
         <div className="md:col-span-6 col-span-12">
           <h3 className="text-3xl uppercase font-bold leading-10">
-            {t("home:title-best")}
+            THE BEST FITNESS GYM IN TOWN
           </h3>
           <p className="text-gray-500 md:text-base text-sm my-6">
             Lorem Ipsum is simply dummy text of the printing and typesetting
