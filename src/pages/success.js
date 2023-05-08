@@ -29,8 +29,8 @@ const Success = () => {
             <div className="underline text-2xl mt-2">{phone}</div>
 
             <Button className="bg-[#E31C25] hover:bg-black duration-200 ease-out rounded-sm mt-8 w-[200px]">
-              <Link href="/" className="font-bold mt-5">
-                Back To Home
+              <Link href="/user" className="font-bold mt-5">
+                Go to dashboard
               </Link>
             </Button>
           </div>

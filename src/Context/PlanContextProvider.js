@@ -1,14 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { Plans } from "../Constants/db";
-
+import {Plans} from '../Constant/plan'
 const PlanContext = createContext();
 function PlanContextProvider({ children }) {
   const [plan, setPlan] = useState([]);
 
   useEffect(() => {
-    setPlan(Plans);
-  }, [plan]);
-
+  setPlan(Plans)
+  }, []);
   return <PlanContext.Provider value={plan}>{children}</PlanContext.Provider>;
 }
 

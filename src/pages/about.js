@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useTransition } from "react";
 import Image from "next/image";
 
 // components
@@ -10,6 +10,7 @@ import Layout from "@/components/Layout";
 import { BsArrowRight, BsCheckAll } from "react-icons/bs";
 
 function about(props) {
+
   return (
     <>
       <Layout>
@@ -23,19 +24,17 @@ function about(props) {
               className="w-full md:h-[400px] h-[300px]"
             />
             <h1 className="absolute top-[50%] left-[30%] md:text-8xl text-4xl text-white font-bold tracking-wider">
-              About Us
+            About Us
             </h1>
           </div>
           <Wrapper>
             {/* top title */}
             <div>
               <h3 className="text-center cursor-pointer md:text-4xl text-2xl font-bold tracking-wide hover:tracking-wider duration-200 pt-10">
-                EVERYBODY WELCOME FAVORITE GYM
+              EVERYBODY WELCOME FAVORITE GYM
               </h3>
               <p className="text-center tracking-wide md:text-base text-xs pt-6 leading-6">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. the readable content of a page when looking at its
-                layout.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. the readable content of a page when looking at its layout.
               </p>
             </div>
 
@@ -45,41 +44,37 @@ function about(props) {
               <div className="md:col-span-6 col-span-12">
                 <h3 className="text-3xl uppercase font-bold leading-10">Our</h3>
                 <p className="text-gray-500 md:text-base text-sm my-6">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry’s
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. the readable content of a page when looking at its layout.
                 </p>
                 <div>
                   <div className="flex items-center py-3">
                     <BsCheckAll className="text-[#E31C25] mr-3" />
                     <p className="text-gray-600 font-[500]">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     </p>
                   </div>
                   <div className="flex items-center py-3">
                     <BsCheckAll className="text-[#E31C25] mr-3" />
                     <p className="text-gray-600 font-[500]">
-                      Proin sit amet diam et elit dictum sodales.
+                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     </p>
                   </div>
                   <div className="flex items-center py-3">
                     <BsCheckAll className="text-[#E31C25] mr-3" />
                     <p className="text-gray-600 font-[500]">
-                      Suspendisse tempus felis a libero mollis ultrices.
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     </p>
                   </div>
                   <div className="flex items-center py-3">
                     <BsCheckAll className="text-[#E31C25] mr-3" />
                     <p className="text-gray-600 font-[500]">
-                      Nullam accumsan ipsum a diam cursus mattis.
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex  items-center mt-4 cursor-pointer bg-black  hover:bg-[#E31C25] duration-200 rounded-sm w-[150px] text-center">
-                  <Button>READ MORE</Button>
+                  <Button>Read More</Button>
                   <BsArrowRight className="text-white text-ls font-[600]" />
                 </div>
               </div>

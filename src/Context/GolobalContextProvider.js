@@ -12,9 +12,11 @@ const initialValues = {
 const GlobalContext = createContext();
 function GlobalContextProvider({ children }) {
   const [userData, setUserData] = useState(initialValues);
+  const [auth, setAuth] = useState(false);
+  
 
   return (
-    <GlobalContext.Provider value={{ userData, setUserData }}>
+    <GlobalContext.Provider value={{ userData, setUserData ,auth, setAuth}}>
       {children}
     </GlobalContext.Provider>
   );

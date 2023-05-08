@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useRouter } from "next/router";
 
 // formik
@@ -16,8 +16,8 @@ import { usePlan } from "@/Context/PlanContextProvider";
 import { useGlobal } from "@/Context/GolobalContextProvider";
 
 const radioOptions = [
-  { label: "male", value: "0" },
-  { label: "female", value: "1" },
+  { label: "male", value: "male" },
+  { label: "female", value: "female" },
 ];
 
 const selectOptions = [
@@ -47,18 +47,22 @@ let validationSchema = Yup.object({
 });
 
 function Plans() {
-  const { setUserData } = useGlobal();
 
-  const plan = usePlan();
+  const planData = usePlan();
+  const { setUserData,auth,setAuth } = useGlobal();
+ console.log(planData);
+console.log(auth);
   const { query, push } = useRouter();
   const { id } = query;
 
   // Find Plan Name
-  const foundNamePlan = plan.find((item) => item.id === parseInt(id));
-  const foundName = foundNamePlan?.title;
+
+  const foundPlan = planData?.find((item) => item.id === parseInt(id));
+
 
   const onSubmit = (values) => {
     setUserData(values);
+    setAuth(true)
     const localStorageClients = localStorage.getItem("clients");
     const clients = localStorageClients ? JSON.parse(localStorageClients) : [];
     const newClients = [...clients, values];
@@ -78,15 +82,51 @@ function Plans() {
       <div className="bg-[#eeeeee]">
         <Wrapper>
           <div className="grid grid-cols-12 gap-8">
-            <div className="md:col-span-4 col-span-10 md:mt-14 mt-10 mb-2">
-              <h1 className="mb-8 font-bold text-4xl tracking-wider uppercase md:text-left text-center">
-                Plan <span className="text-[#E31C25]">{foundName}</span>
-              </h1>
+            <div className="md:col-span-4 col-span-10 md:mt-14 mt-10 md:mb-2">
+              <div>
+                <h1 className="md:mb-8 mb-4 font-bold md:text-4xl text-xl tracking-wider uppercase md:text-left text-center">
+                 Plan
+                  <span className="text-[#E31C25] inline-flex ml-6">
+                    {foundPlan?.title}
+                  </span>
+                </h1>
+                <div>
+                  <h3 className="md:mb-8 mb-4 font-bold md:text-xl text-base tracking-wider uppercase md:text-left text-center">
+                  Price
+                    <span className="text-[#E31C25] inline-flex ml-6">
+                      ${foundPlan?.price}
+                    </span>
+                  </h3>
+                </div>
+                <div>
+                  <h3 className="md:mb-8 mb-4 font-bold md:text-xl text-base tracking-wider uppercase md:text-left text-center">
+                    <span className="">{foundPlan?.options?.fitness}</span>
+                  </h3>
+                </div>
+                <div
+                  className={`${
+                    foundPlan?.title === "silver" ? "hidden" : "block"
+                  }`}
+                >
+                  <h3 className="md:mb-8 mb-4 font-bold md:text-xl text-base tracking-wider uppercase md:text-left text-center">
+                    <span>{foundPlan?.options?.lossWeight}</span>
+                  </h3>
+                </div>
+                <div
+                  className={`${
+                    foundPlan?.title === "gold" ? "block" : "hidden"
+                  }`}
+                >
+                  <h3 className="mb-8 font-bold md:text-xl text-base tracking-wider uppercase md:text-left text-center">
+                    <span className="">{foundPlan?.options?.personal}</span>
+                  </h3>
+                </div>
+              </div>
             </div>
             {/* form */}
             <form
               onSubmit={formik.handleSubmit}
-              className="md:col-span-8 col-span-10 md:gap-8 md:my-8 my-2"
+              className="md:col-span-8 col-span-10 md:gap-8 md:my-8 "
             >
               <Input
                 formik={formik}
@@ -144,4 +184,4 @@ function Plans() {
   );
 }
 
-export default Plans;
+export default React.memo(Plans);

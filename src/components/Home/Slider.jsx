@@ -11,8 +11,9 @@ const images = [
 ];
 
 function Slider(props) {
+
   return (
-    <div>
+    <div dir="ltr">
       <Carousel
         autoPlay={true}
         infiniteLoop={true}
@@ -30,7 +31,7 @@ function Slider(props) {
               className="max-w-[100%] object-cover md:h-[700px] h-[300px]"
             />
             <div className="flex justify-center items-center absolute bottom-[20%] md:left-[40%] sm:left-[30%] left-[18%] px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-source bg-white  text-black/[0.9] text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-60 ">
-              START YOUR FITNESS JOURNEY
+            START YOUR FITNESS JOURNEY
             </div>
           </div>
         ))}

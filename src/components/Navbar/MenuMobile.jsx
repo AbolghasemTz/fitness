@@ -1,11 +1,11 @@
-import { useRouter } from "next/router";
 import React from "react";
 import Link from "next/link";
 import { MdOutlineClose } from "react-icons/md";
-import data from "../../Constants/menuItem.json";
 
+import {MenuItem} from '../../Constant/menu'
 function MenuMobile({ mobileMenu, setMobileMenu }) {
-  const { locale } = useRouter();
+ 
+  
 
   return (
     <>
@@ -20,15 +20,13 @@ function MenuMobile({ mobileMenu, setMobileMenu }) {
       bg-white border-b 
       "
         >
-          {data.menu
-            .filter((p) => p.locale === locale)
-            .map((item, i) => (
-              <React.Fragment key={i}>
-                <li className="cursor-pointer py-4 px-5 border-b flex-col  relative hover:bg-[#E31C25] hover:text-white duration-200">
-                  <Link href={item.url}>{item.title}</Link>
-                </li>
-              </React.Fragment>
-            ))}
+          {MenuItem.map((item, i) => (
+            <React.Fragment key={i}>
+              <li className="cursor-pointer py-4 px-5 border-b flex-col  relative hover:bg-[#E31C25] hover:text-white duration-200">
+                <Link href={item.url}>{item.title}</Link>
+              </li>
+            </React.Fragment>
+          ))}
         </ul>
       )}
     </>

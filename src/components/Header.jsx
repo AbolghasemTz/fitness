@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 
+import {BiUser} from "react-icons/bi"
 // components
 import Wrapper from "./Wrapper";
 import Menu from "./Navbar/Menu";
 import MenuMobile from "./Navbar/MenuMobile";
-import Language from "./Navbar/Language";
+import { useGlobal } from "@/Context/GolobalContextProvider";
 
 function Header() {
+  const { auth, userData } = useGlobal();
   const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
@@ -18,19 +19,24 @@ function Header() {
     transition-transform duration-300 shadow-md"
     >
       <Wrapper className="flex justify-between items-center">
-        <div className="flex items-center gap-6 ml-10">
+        <div className="flex items-center gap-4 ml-10">
           <Link href="/">
             <Image
               src="/Logo.png"
               alt="Logo gym"
-              width={100}
-              height={100}
-              className="md:w-20 md:h-20 w-16 h-16"
+              width={80}
+              height={80}
+              className="md:w-18 md:h-16 w-14 h-14"
             />
           </Link>
-
-          {/* lang */}
-          <Language />
+          <div>
+            {auth ? (
+              <Link href="/user">Hi , {userData?.name}</Link>
+            ) : (
+              <p className="cursor-pointer">User</p>
+            )}
+          </div>
+       
         </div>
 
         {/* Menu */}

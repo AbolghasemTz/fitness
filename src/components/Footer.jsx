@@ -14,19 +14,20 @@ import {
 import { GoLocation } from "react-icons/go";
 
 function Footer() {
+  
   return (
     <footer className="bg-[#111111] pb-4">
       <Wrapper>
         {/* top footer */}
         <div className="grid grid-cols-12 md:gap-x-8 gay-y-6 py-8">
           <div className="lg:col-span-3 md:col-span-6 col-span-12 text-white">
-            <h3 className="font-bold text-2xl tracking-wider">Fitness</h3>
+            <h3 className="font-bold text-2xl tracking-wider">fitness</h3>
             <p className="md:text-base text-sm py-8">
-              Lorem Ipsum is simply dummied text of the printing and industry.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             </p>
             <div className=" flex items-center justify-around py-2 bg-[#292929] rounded-sm">
               <div>
-                <p>GET US SUPPORT</p>
+                <p>get us support</p>
                 <p className="font-bold tracking-wider">+989354947002</p>
               </div>
               <div className="p-3 bg-[#E31C25] rounded-sm">
@@ -37,27 +38,27 @@ function Footer() {
 
           <div className="lg:col-span-3 md:col-span-6 col-span-12 text-white">
             <h3 className="font-bold tracking-wider text-2xl md:mt-0 mt-6">
-              USEFUL-LINKS
+            USEFUL-LINKS
             </h3>
             <ul className="py-8">
               <li className="hover:text-[#E31C25] duration-200 ease-out cursor-pointer">
-                Lifting weights
+              Lifting weights
               </li>
               <li className="hover:text-[#E31C25] duration-200 ease-out pt-4 cursor-pointer">
-                Cardio Classes
+             Cardio Classes
               </li>
               <li className="hover:text-[#E31C25] duration-200 ease-out pt-4 cursor-pointer">
                 New To Fitness
               </li>
               <li className="hover:text-[#E31C25] duration-200 ease-out pt-4 cursor-pointer">
-                Body Muscle
+              Body Muscle
               </li>
             </ul>
           </div>
 
           <div className="lg:col-span-3 md:col-span-6 col-span-12 text-white">
             <h3 className="font-bold tracking-wider text-2xl md:mt-0 mt-6">
-              CONTACT
+             Contact
             </h3>
             <div className="py-6">
               <Image
@@ -75,16 +76,16 @@ function Footer() {
 
           <div className="lg:col-span-3 md:col-span-6 col-span-12 text-white">
             <h3 className="font-bold tracking-wider text-2xl md:mt-0 mt-6">
-              GYM OPENING TIME
+             GYM OPENING TIME
             </h3>
 
             <div className="mt-6">
               <div className="flex items-center justify-between">
-                <p>Monday</p>
+                <p>monday</p>
                 <p>8AM-2AM</p>
               </div>
               <div className="flex items-center justify-between mt-4">
-                <p>Tuesday</p>
+                      <p>Tuesday</p>
                 <p>8AM-2AM</p>
               </div>
               <div className="flex items-center justify-between mt-4">
@@ -105,7 +106,7 @@ function Footer() {
               </div>
               <div className="flex items-center justify-between mt-4">
                 <p>On Public Holidays</p>
-                <p>Closed</p>
+                <p>Close</p>
               </div>
             </div>
           </div>

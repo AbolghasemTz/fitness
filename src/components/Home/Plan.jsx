@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useTransition } from "react";
 import Link from "next/link";
 
 // components
@@ -7,22 +7,24 @@ import Wrapper from "../Wrapper";
 // icons
 import { GiGymBag } from "react-icons/gi";
 import Button from "../Common/Button";
-import { useTranslation } from "next-i18next";
+
+// context
 import { usePlan } from "@/Context/PlanContextProvider";
 
 function Plan(props) {
  const planData = usePlan();
+ console.log(planData);
+
 
   return (
     <div className=" md:mt-[110px] mt-[30px]">
       <Wrapper className="my-8">
         <div className="flex flex-col justify-center items-center w-full">
           <h3 className="cursor-pointer md:text-6xl text-3xl font-bold tracking-wide hover:tracking-wider duration-200 pt-8">
-            OUR PRICE TABLE
+        OUR PRICE TABLE
           </h3>
           <p className="tracking-wide md:text-base text-xs pt-6 leading-6 ">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. the readable content of a page when looking at its layout.
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. the readable content of a page when looking at its layout.
           </p>
         </div>
 
@@ -57,7 +59,7 @@ function Plan(props) {
               {p.options.personal}
               </p>
             </div>
-            <div className={` ${p.title === "standard" ? "bg-black hover:bg-[#E31C25]" : "bg-[#E31C25] hover:bg-black"} w-[104px] mx-auto rounded-sm  duration-200 ease-out my-6 flex items-center justify-center`}>
+            <div className={`${p.title === "standard"  ? "bg-black hover:bg-[#E31C25]" : "bg-[#E31C25] hover:bg-black"} w-[104px] mx-auto rounded-sm  duration-200 ease-out my-6 flex items-center justify-center`}>
               <Link href={`/subscribe/${p.id}`}>
                 <Button className="uppercase">Subscribe</Button>
               </Link>
