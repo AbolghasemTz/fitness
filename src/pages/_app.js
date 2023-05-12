@@ -1,13 +1,12 @@
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 import "@/styles/globals.css";
 import Head from "next/head";
 import { Toaster } from "react-hot-toast";
 import PlanContextProvider from "@/Context/PlanContextProvider";
 import GlobalContextProvider from "../Context/GolobalContextProvider";
-
+import "../Services/i18n";
 
 function App({ Component, pageProps }) {
-
   return (
     <>
       <Head>
@@ -28,13 +27,13 @@ function App({ Component, pageProps }) {
 
       <Toaster position="top-center" reverseOrder={false} />
 
-      <GlobalContextProvider>
-        <PlanContextProvider>
-          <Component {...pageProps} />
-        </PlanContextProvider>
-      </GlobalContextProvider>
-  
- 
+      <Suspense fallback="Loading ...">
+        <GlobalContextProvider>
+          <PlanContextProvider>
+            <Component {...pageProps} />
+          </PlanContextProvider>
+        </GlobalContextProvider>
+      </Suspense>
     </>
   );
 }

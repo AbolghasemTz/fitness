@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "title": "argent",
+      "price": 19,
+      "options": {
+        "fitness": "GYM Fitness",
+        "lossWeight": "PERTE DE POIDS",
+        "personal": "ENTRAÎNEUR PERSONNEL"
+      }
+    },
+    {
+      "id": 2,
+      "title": "standard",
+      "price": 29,
+      "options": {
+        "fitness": "GYM Fitness",
+        "lossWeight": "PERTE DE POIDS",
+        "personal": "ENTRAÎNEUR PERSONNEL"
+      }
+    },
+    {
+      "id": 3,
+      "title": "or",
+      "price": 35,
+      "options": {
+        "fitness": "GYM Fitness",
+        "lossWeight": "PERTE DE POIDS",
+        "personal": "ENTRAÎNEUR PERSONNEL"
+      }
+    }
+  ]

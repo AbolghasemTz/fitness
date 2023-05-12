@@ -1,12 +1,16 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import {Plans} from '../Constant/plan'
+import { useTranslation } from "react-i18next";
 const PlanContext = createContext();
 function PlanContextProvider({ children }) {
+  const {i18n}  = useTranslation()
   const [plan, setPlan] = useState([]);
 
+ 
   useEffect(() => {
-  setPlan(Plans)
-  }, []);
+    fetch(`/data/${i18n.language}.json`)
+      .then((response) => response.json())
+      .then((json) => setPlan(json));
+  }, [i18n.language]);
   return <PlanContext.Provider value={plan}>{children}</PlanContext.Provider>;
 }
 

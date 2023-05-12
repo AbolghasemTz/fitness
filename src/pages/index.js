@@ -5,15 +5,18 @@ import Plan from "@/components/Home/Plan";
 import Layout from "@/components/Layout";
 
 
+
 export default function Home(props) {
   return (
     <main>
+     
       <Layout>
         <Slider />
         <BestFitness />
         <Choice />
         <Plan />
       </Layout>
+    
     </main>
   );
 }

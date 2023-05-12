@@ -8,6 +8,7 @@ import Wrapper from "./Wrapper";
 import Menu from "./Navbar/Menu";
 import MenuMobile from "./Navbar/MenuMobile";
 import { useGlobal } from "@/Context/GolobalContextProvider";
+import LanguageSwitcher from "./Navbar/LanguageSwitcher";
 
 function Header() {
   const { auth, userData } = useGlobal();
@@ -29,6 +30,7 @@ function Header() {
               className="md:w-18 md:h-16 w-14 h-14"
             />
           </Link>
+          <LanguageSwitcher />
           <div>
             {auth ? (
               <Link href="/user">Hi , {userData?.name}</Link>

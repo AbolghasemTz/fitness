@@ -1,4 +1,4 @@
-import React, { useTransition } from "react";
+import React from "react";
 import Link from "next/link";
 
 // components
@@ -10,19 +10,23 @@ import Button from "../Common/Button";
 
 // context
 import { usePlan } from "@/Context/PlanContextProvider";
+import { useTranslation } from "react-i18next";
 
 function Plan(props) {
+  const {t} = useTranslation()
  const planData = usePlan();
- console.log(planData);
+ 
 
 
   return (
     <div className=" md:mt-[110px] mt-[30px]">
       <Wrapper className="my-8">
         <div className="flex flex-col justify-center items-center w-full">
+      
           <h3 className="cursor-pointer md:text-6xl text-3xl font-bold tracking-wide hover:tracking-wider duration-200 pt-8">
-        OUR PRICE TABLE
+        {t("OUR PRICE TABLE")}
           </h3>
+          
           <p className="tracking-wide md:text-base text-xs pt-6 leading-6 ">
          Lorem Ipsum is simply dummy text of the printing and typesetting industry. the readable content of a page when looking at its layout.
           </p>
@@ -32,7 +36,7 @@ function Plan(props) {
 
         <div className="grid grid-cols-12 md:gap-x-8 gap-y-6 md:mt-28 mt-16">
         
-         {planData.map((p) => (
+         {planData?.map((p) => (
             <div key={p.id} className="md:col-span-4 col-span-12 border rounded-sm text-center uppercase">
             <div className="border-b py-4">
               <h3 className="text-gray-700 tracking-wide text-2xl">{p.title}</h3>
@@ -48,7 +52,10 @@ function Plan(props) {
 
               <div className="flex justify-center items-center pt-4">
                 <p className="font-bold text-black text-2xl mr-2">${p.price} </p>
-                <span className="text-sm text-gray-400"> / MONTH</span>
+              
+
+                <span className="text-sm text-gray-400"> / {t("month")}</span>
+                
               </div>
             </div>
 
@@ -61,7 +68,7 @@ function Plan(props) {
             </div>
             <div className={`${p.title === "standard"  ? "bg-black hover:bg-[#E31C25]" : "bg-[#E31C25] hover:bg-black"} w-[104px] mx-auto rounded-sm  duration-200 ease-out my-6 flex items-center justify-center`}>
               <Link href={`/subscribe/${p.id}`}>
-                <Button className="uppercase">Subscribe</Button>
+                <Button className="uppercase">{t("Subscribe")}</Button>
               </Link>
             </div>
           </div>

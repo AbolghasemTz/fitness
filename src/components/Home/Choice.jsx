@@ -6,16 +6,19 @@ import Wrapper from "../Wrapper";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { RiBoxingFill } from "react-icons/ri";
 import { CgGym } from "react-icons/cg";
+import { useTranslation } from "react-i18next";
 
 function Choice() {
-
+const {t} = useTranslation()
   return (
     <div className="bg-[rgb(17,17,17)] md:pb-20 pb-8 md:mt-[130px] mt-[40px]">
       <Wrapper className="my-8">
         <div className="flex flex-col justify-center items-center w-full">
+    
           <h3 className="text-white cursor-pointer md:text-6xl text-3xl font-bold tracking-wide hover:tracking-wider duration-200 pt-8">
-          WHAY CHOICE US
+          {t("WHAY CHOICE US")}
           </h3>
+          
           <p className="text-white tracking-wide md:text-base text-xs pt-6 leading-6 ">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. the readable content of a page when looking at its layout.
           </p>
@@ -33,9 +36,11 @@ function Choice() {
               <RiBoxingFill className="text-white text-5xl" />
             </div>
             <div className="text-center my-6">
+        
               <h3 className="text-white font-bold pb-3 tracking-wide lg:text-3xl md:text-2xl text-base">
-              BODY BULDING
+              {t("BODY BULDING")}
               </h3>
+              
               <p className="text-white md:text-base text-sm">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               </p>
@@ -54,9 +59,13 @@ function Choice() {
               <GiWeightLiftingUp className="text-white text-5xl" />
             </div>
             <div className="text-center my-6">
+        
+
               <h3 className="text-white font-bold pb-3 tracking-wide lg:text-3xl md:text-2xl text-base">
-              BODY BULDING
+              {t("BODY BULDING")}
               </h3>
+             
+
               <p className="text-white md:text-base text-sm">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               </p>
@@ -75,9 +84,12 @@ function Choice() {
               <CgGym className="text-white text-5xl" />
             </div>
             <div className="text-center my-6">
+        
+
               <h3 className="text-white font-bold pb-3 tracking-wide lg:text-3xl md:text-2xl text-base">
-              BODY BULDING
+              {t("BODY BULDING")}
               </h3>
+              
               <p className="text-white md:text-base text-sm font-source">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               </p>
